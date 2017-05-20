@@ -1,0 +1,6 @@
+http://localhost/promnet_cbt/soal ->1. gaada nama kuliah nya 
+				    
+http://localhost/promnet_cbt/soal/create -> hapus foto di soal
+
+ soalnya harus perpaket jangan langsung 40
+

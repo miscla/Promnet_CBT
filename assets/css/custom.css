@@ -1,0 +1,147 @@
+/*==============================================
+    GENERAL  STYLES    
+    =============================================*/
+    body {
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    #wrapper {
+        width: 100%;
+        background:#202020;
+    }
+
+    #page-wrapper {
+        padding: 15px 15px;
+        min-height: 600px;
+        background:#F3F3F3;
+
+    }
+    #page-inner {
+        width:100%;
+        margin:5px 20px 10px 0px;
+        background-color:#e2e1e1!important;
+        padding:20px;
+        min-height:850px;
+    }
+
+    .text-center {
+        text-align:center;
+    }
+    .no-boder {
+        border:1px solid #f3f3f3;
+    }
+    h2 {
+        color: #f00;
+    }
+    h4 {
+        padding-top:100px;
+    }
+    .square-btn-adjust {
+        border: 0px solid transparent; 
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        border-radius: 0px;
+
+    }
+
+/*==============================================
+   DASHBOARD STYLES    
+   =============================================*/
+
+   .bg-color-green {
+    background-color: #00CE6F;
+    color: #fff;
+}
+.bg-color-blue {
+    background-color: #12aaf8;
+    color: #fff;
+}
+.bg-color-red {
+    background-color: #DB0630;
+    color: #fff;
+}
+.bg-color-brown {
+    background-color: #e47b0b;
+    color: #fff;
+}
+
+
+.icon-box-right {
+    display: block;
+    float: right;
+    margin: 0 15px 10px 0;
+    width: 70px;
+    height: 70px;
+    line-height: 75px;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 40px;
+}
+
+.main-temp-back {
+    background: #8702A8;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+}
+.main-temp-back .text-temp {
+    font-size: 40px;
+}
+.back-dash {
+    padding:20px;
+    font-size:20px;
+    font-weight:500;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    background-color:#2EA7EB;
+    color:#fff;
+}
+.back-dash p {
+    padding-top:16px;
+    font-size:13px;
+    color:#fff;
+    line-height:25px;
+    text-align:justify;
+}
+.back-footer-green {
+    background-color: #009B50;
+    border-top: 0px solid #fff;
+}
+.back-footer-red {
+    background-color: #AF0000;
+    border-top: 0px solid #fff;
+}
+.back-footer-blue {
+    background-color: #0083c7;
+    border-top: 0px solid #fff;
+}
+.back-footer-brown {
+    background-color: #B94A00;
+    border-top: 0px solid #fff;
+}
+
+/*==============================================
+    MEDIA QUERIES     
+    =============================================*/
+
+    @media(min-width:768px) {
+       #page-wrapper{
+        padding: 15px 30px;
+        min-height: 1200px;
+
+    }
+    .navbar-side {
+        z-index: 1;
+        position: absolute;
+        width: 260px;
+    }
+
+    .navbar {
+       border-radius: 0px; 
+   }
+   
+}
+
+
