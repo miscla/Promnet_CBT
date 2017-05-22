@@ -4,7 +4,7 @@
         <div id="page-wrapper" >
             <div id="page-inner">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12" style="padding-top: 20px;">
                      <h2>Halaman Soal</h2>   
                     </div>
                 </div>              
@@ -19,7 +19,7 @@
                 <br>
 
                     <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                   <!--   Kitchen Sink -->
                   <p><a href="<?php echo base_url();?>paket/create" class='btn btn-success'><i class='fa fa-plus'></i> Tambah Paket Soal</a></p>
                     <div class="panel panel-default">
@@ -31,7 +31,6 @@
                                 <table class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
                                             <th>Kode Paket</th>
                                             <th>Kategori</th>
                                             <th>Aksi</th>
@@ -40,7 +39,6 @@
                                     <tbody>
                                     <?php $no=0; foreach($paket as $pak) { $no++ ?>
                                         <tr>
-                                            <td><?php echo $no; ?></td>
                                             <td><?php echo $pak['id_paket']; ?></td>
                                             <td><?php echo $pak['paket']; ?></td>
                                             <td><a class='btn btn-info btn-xs' title='ubah' href="<?php echo base_url();?>paket/edit/<?php echo $pak['id_paket']; ?>"><span class="glyphicon glyphicon-edit"></span></a>

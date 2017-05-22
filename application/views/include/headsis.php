@@ -13,6 +13,14 @@
        
     <link href="<?php echo base_url();?>assets/css/custom.css" rel="stylesheet" />
     <link href="<?php echo base_url();?>assets/css/chosen.css" rel="stylesheet"/>
+
+    <!--external css-->
+    <link href="<?php echo base_url();?>assets2/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        
+    <!-- Custom styles for this template -->
+    <link href="<?php echo base_url();?>assets2/css/style.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets2/css/style-responsive.css" rel="stylesheet">
+
     <style type="text/css">
         .chzn-container-single .chzn-search input{
             width: 100%;

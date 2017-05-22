@@ -12,7 +12,6 @@
 
     #page-wrapper {
         padding: 15px 15px;
-        min-height: 600px;
         background:#F3F3F3;
 
     }
@@ -21,7 +20,6 @@
         margin:5px 20px 10px 0px;
         background-color:#e2e1e1!important;
         padding:20px;
-        min-height:850px;
     }
 
     .text-center {
@@ -129,8 +127,6 @@
     @media(min-width:768px) {
        #page-wrapper{
         padding: 15px 30px;
-        min-height: 1200px;
-
     }
     .navbar-side {
         z-index: 1;

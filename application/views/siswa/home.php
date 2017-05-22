@@ -1,53 +1,38 @@
 <?php $this->load->view('include/headsis') ?>
 <body>
            <!-- /. NAV TOP  -->
-        <div id="page-wrapper" >
-            <div id="page-inner">
+        <div id="" >
+            <div style="margin:5px 20px 10px 0px; padding:20px;">
                 <div class="row">
-                    <div class="col-md-12">
-                     <h2></h2>   
-                        <h3>Selamat Datang <?php echo $user->nama;?></h3>
+                    <div class="col-md-12" style="padding-top: 100px;">
                     </div>
                 </div>              
                  <!-- /. ROW  -->
-                  <hr />
-		  <div id="page-wrapper" >
-		    <div id="inner">
-			<div class="row">
-			    
-			
-                    <div class="col-md-3  col-xs-4 col-xs-6">           
-                        <div class="panel panel-primary text-center no-boder bg-color-red">
-                            <div class="panel-body">
-                                <center ><img src="<?php echo base_url();?>/assets/img/reading (3).png"></center>
+                      <div class="row mt">
+                          </div><!-- /row -->
+                    
+                                    
+                    <div class="row">
+                        <!-- TWITTER PANEL -->
+                        <div class="col-md-12">
+                            <div class="darkblue-panel pn">
+                                <div class="darkblue-header">
+                                    <h1 style="color: white;">Selamat Datang <?php echo $user->nama;?></h1>
+                                    <h2 style="color: white;">Silahkan memulai mengerjakan soal atau melihat nilai</h2>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-offset-2 col-md-4">
+                                        <a href="<?php echo base_url(); ?>siswa/paket"><button class="btn btn-theme btn-block" type="submit">SOAL</button></a>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <a href="<?php echo base_url(); ?>jawaban/nilai"><button class="btn btn-theme btn-block" type="submit">NILAI</button></a>
+                                    </div>
+                                </div>
+                                <canvas id="serverstatus02" height="120" width="120"></canvas>
                             </div>
-                            <div class="panel-footer back-footer-red">
-                                <a style="color:white" href="<?php echo base_url(); ?>siswa/paket">SOAL </a>
-                            </div>
-			    
-                        </div>
-                    </div>
-
-                    <div class="col-md-3  col-xs-4 col-xs-6">           
-                        <div class="panel panel-primary text-center no-boder bg-color-brown">
-                            <div class="panel-body">
-                                <center ><img src="<?php echo base_url();?>/assets/img/grades.png"></center>
-                            </div>
-                            <div class="panel-footer back-footer-brown">
-                                <a style="color:white" href="<?php echo base_url(); ?>jawaban/nilai">NILAI </a>
-                            </div>
-                
-                        </div>
-                    </div>
-		    
-                    </div>
-		    </div>
-		    </div>
-		      
-                    </div>
-			</div>
-            </div>
-            </div>
+                        </div><!-- /col-md-4 -->      
+          </div>
                 
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->

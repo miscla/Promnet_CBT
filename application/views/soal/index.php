@@ -4,7 +4,7 @@
         <div id="page-wrapper" >
             <div id="page-inner">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12" style="padding-top: 20px;">
                      <h2>Halaman Soal</h2>   
                     </div>
                 </div>              
