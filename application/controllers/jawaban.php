@@ -78,7 +78,7 @@ class Jawaban extends CI_Controller {
 		$this->load->view('jawaban/dnilai2', $data);
 	}
 
-	public function daftar(){
+	public function daftar($id_paket){
 		$this->ceklogin();
 		$this->load->model('user_model');
 		$this->load->model('mahasiswa_model');
@@ -91,10 +91,10 @@ class Jawaban extends CI_Controller {
 		$data = array(			
 			'id_mhs' => $idMhs,
 			'tgl_tes' =>date("Y-m-d"),
-			//'id_paket' => $id_paket,			
+			'id_paket' => $id_paket,			
 		);
 		$this->jawaban_model->Simpan('jawaban', $data);
-		$id=mysql_insert_id();
+		$id = $this->db->insert_id();
 		//echo $id;
 		redirect('jawaban/soal/'.$id);
 	}
@@ -102,8 +102,9 @@ class Jawaban extends CI_Controller {
 	public function soal($id = 0){		
     	$this->ceklogin();    	
     	$this->load->model('soal_model');
-    	//$this->load->model('jawaban_model');
-    	//$paket = $this->jawaban_model->AmbilPaket($id)->row()->id_paket;
+    	$this->load->model('jawaban_model');
+    	$paket = $this->jawaban_model->AmbilPaket($id)->row()->id_paket;
+    	// print_r($paket);
     	 $soal = $this->soal_model->Ambil($paket);
     	//$soal = $this->soal_model->Ambil();
     	//$id = mysql_insert_id();        
@@ -139,6 +140,9 @@ class Jawaban extends CI_Controller {
 				'jawaban' => $jawaban[$nomor],						
 				'kunci' =>$this->soal_model->AmbilJawaban($nomor),						
 			);
+			if($jawaban[$nomor]==$data['kunci']){
+				$data['nilai']=10; 
+			}else $data['nilai']=0;
 			$this->jawaban_detail_model->Simpan('jawaban_detail', $data);
 		}
 

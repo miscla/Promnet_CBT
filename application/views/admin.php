@@ -48,11 +48,11 @@
                       <!-- SERVER STATUS PANELS -->
                         <div class="col-md-4 col-sm-4 mb">
                             <div class="white-panel pn donut-chart">
-                                <div class="white-header">
+                                <div class="white-header" style="background: #444c57;">
                                     <h5>INFORMASI</h5>
                                 </div>
-                                <div class="row">
-                                    Selamat Datang di Ujian Online.</br>
+                                <div class="row" style="color: #444c57;">
+                                    Selamat Datang di Ujian Berbasis Komputer.</br>
                                     Login Sebagai ADMIN.
                                 </div>
                                 <canvas id="serverstatus01" height="120" width="120"></canvas>
@@ -62,11 +62,11 @@
                         
                         <div class="col-md-4 col-sm-4 mb">
                             <div class="white-panel pn donut-chart">
-                                <div class="white-header">
+                                <div class="white-header" style="background: #444c57;">
                                     <h5>KETENTUAN</h5>
                                 </div>
-                                <div class="row">
-                                    Selamat Datang di Ujian Online.</br>
+                                <div class="row" style="color: #444c57;">
+                                    Selamat Datang di Ujian Berbasis Komputer.</br>
                                     Login Sebagai ADMIN.
                                 </div>
                                 <canvas id="serverstatus01" height="120" width="120"></canvas>
@@ -76,11 +76,11 @@
                         
                         <div class="col-md-4 col-sm-4 mb">
                             <div class="white-panel pn donut-chart">
-                                <div class="white-header">
+                                <div class="white-header" style="background: #444c57;">
                                     <h5>INFORMASI LAIN</h5>
                                 </div>
-                                <div class="row">
-                                    Selamat Datang di Ujian Online.</br>
+                                <div class="row" style="color: #444c57;">
+                                    Selamat Datang di Ujian Berbasis Komputer.</br>
                                     Login Sebagai ADMIN.
                                 </div>
                                 <canvas id="serverstatus01" height="120" width="120"></canvas>
@@ -98,7 +98,7 @@
                             <div class="darkblue-panel pn">
                                 <div class="darkblue-header">
                                     <h1>PERHATIAN</h1>
-                                    <h5>Jangan Lupa untuk Memvalidasi data siswa yang telah Mendaftar, dan daftarkan peserta</h5></br>
+                                    <h5>Jangan Lupa untuk Memvalidasi data siswa yang telah Mendaftar, dan daftarkan peserta</h5>
                                     <h5>dengan ketentuan NIS sebagai username dan password</h5>
                                 </div>
                                 <canvas id="serverstatus02" height="120" width="120"></canvas>

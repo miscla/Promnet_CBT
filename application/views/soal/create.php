@@ -33,7 +33,7 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-md-6">
-                                <form role="form" action="<?php echo base_url(); ?>soal/insert" method="POST" enctype="multipart/form-data">
+                                <form role="form" action="#" method="POST">
                                     <div class="form-group">
                                         <label>-- Pilih Paket Soal --</label>
                                         <select class="form-control" name="paket" style="width: 100;">
@@ -47,80 +47,194 @@
                                               <?php } } ?>
                                           </select>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Soal</label>
-										
-                                        <textarea class="form-control" rows="3" name="soal" required></textarea>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Jawaban A</label>
-                                        <input class="form-control" name="a" required/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Jawaban B</label>
-                                        <input class="form-control" name="b" required/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Jawaban C</label>
-                                        <input class="form-control" name="c" required/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Jawaban D</label>
-                                        <input class="form-control" name="d" required/>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>-- Pilih Jawaban --</label>
-                                        <select class="form-control" name="kunci">
-                                            <option>A</option>
-                                            <option>B</option>
-                                            <option>C</option>
-                                            <option>D</option>
-                                        </select>
-                                        <?php
-                                            if(isset($_POST['submit'])){
-                                            $pilihan=$_POST["kunci"];
-                                            $id_soal=$_POST["id"];
-                                            $score=0;
-                                            $benar=1;
-                                            $salah=0;
-                                            $kosong=0;
-                                            for ($i=0;$i<$jumlah;$i++){
-                                            //id nomor soal
-                                            $nomor=$id_soal[$i];
-                                            //jika user tidak memilih jawaban
-                                            if (empty($pilihan[$nomor])){
-                                            $kosong++;
-                                            }else{
-                                            //jawaban dari user
-                                            $jawaban=$pilihan[$nomor];
-                                            //cocokan jawaban user dengan jawaban di database
-                                            if($cek){
-                                            //jika jawaban cocok (benar)
-                                            $benar++;
-                                            }else{
-                                            //jika salah
-                                            $salah++;
-                                            }}
-                                            $score = $benar*5;
-                                            }}
-                                            ?>
-
-                                    </div>
-                                    <div class="form-group">
-                                        <label>-- Status --</label>
-                                        <select class="form-control" name="status">
-                                            <option>tampil</option>
-                                            <option>tidak</option>
-                                        </select>
-                                    </div>
-                                    
                                     <div class="form-actions">
-                                        <button type="submit" class="btn btn-primary">Simpan</button>
-                                        <a class="btn btn-default" href="<?php echo base_url();?>soal">Batal</a>
+                                        <button type="submit" class="btn btn-primary" name="input_soal">Mulai Input Soal</button>
                                     </div>
-                            </div>
-                            
-                        </form>
+                                    <br>
+                                </form>
+
+                                    <?php
+                                    
+                                    if(isset($_POST['input_soal'])){
+                                        $paket = $_POST['paket'];
+                                        if($paket == 1){
+                                            $select = "Rekayasa Perangkat Lunak";
+                                        }else if($paket == 2){
+                                            $select = "Pemrograman Internet";
+                                        }else if($paket == 3){
+                                            $select = "Sistem Operasi";
+                                        }else if($paket == 4){
+                                            $select = "Jaringan Komputer";
+                                        }else if($paket == 5){
+                                            $select = "Psikotest";
+                                        }
+                                        if($paket == 5){
+                                            ?> 
+                                            <form role="form" action="<?php echo base_url(); ?>soal/insert" method="POST" enctype="multipart/form-data">
+                                                <div class="form-group">
+                                                    <label>Anda Berada di Paket <?php echo $select ?></label>
+                                                    <input class="form-control" name="paket" value="<?php echo $paket ?>" required readonly>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Soal</label>
+                                                    <input type="file" id="exampleInputFile" name="soal" class="form-control" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Jawaban A</label>
+                                                    <input type="file" id="exampleInputFile" name="a" class="form-control" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Jawaban B</label>
+                                                    <input type="file" id="exampleInputFile" name="b" class="form-control" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Jawaban C</label>
+                                                    <input type="file" id="exampleInputFile" name="c" class="form-control" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Jawaban D</label>
+                                                    <input type="file" id="exampleInputFile" name="d" class="form-control" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>-- Pilih Jawaban --</label>
+                                                    <select class="form-control" name="kunci">
+                                                        <option>A</option>
+                                                        <option>B</option>
+                                                        <option>C</option>
+                                                        <option>D</option>
+                                                    </select>
+                                                    <?php
+                                                        if(isset($_POST['submit'])){
+                                                        $pilihan=$_POST["kunci"];
+                                                        $id_soal=$_POST["id"];
+                                                        $score=0;
+                                                        $benar=1;
+                                                        $salah=0;
+                                                        $kosong=0;
+                                                        for ($i=0;$i<$jumlah;$i++){
+                                                        //id nomor soal
+                                                        $nomor=$id_soal[$i];
+                                                        //jika user tidak memilih jawaban
+                                                        if (empty($pilihan[$nomor])){
+                                                        $kosong++;
+                                                        }else{
+                                                        //jawaban dari user
+                                                        $jawaban=$pilihan[$nomor];
+                                                        //cocokan jawaban user dengan jawaban di database
+                                                        if($cek){
+                                                        //jika jawaban cocok (benar)
+                                                        $benar++;
+                                                        }else{
+                                                        //jika salah
+                                                        $salah++;
+                                                        }}
+                                                        $score = $benar*5;
+                                                        }}
+                                                        ?>
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>-- Status --</label>
+                                                    <select class="form-control" name="status">
+                                                        <option>tampil</option>
+                                                        <option>tidak</option>
+                                                    </select>
+                                                </div>
+                                                
+                                                <div class="form-actions">
+                                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                                    <a class="btn btn-default" href="<?php echo base_url();?>soal">Batal</a>
+                                                </div>
+                                        </div>
+                                        
+                                    </form> 
+                                            
+                                            <?php
+                                        }else{
+                                            ?>
+                                            <form role="form" action="<?php echo base_url(); ?>soal/insert" method="POST" enctype="multipart/form-data">
+                                                <div class="form-group">
+                                                    <label>Anda Berada di Paket <?php echo $select ?></label>
+                                                    <input readonly type="text" class="form-control" name="paket" value="<?php echo $paket ?>" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Soal</label>
+                                                    
+                                                    <textarea class="form-control" rows="3" name="soal" required></textarea>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Jawaban A</label>
+                                                    <input class="form-control" name="a" required/>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Jawaban B</label>
+                                                    <input class="form-control" name="b" required/>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Jawaban C</label>
+                                                    <input class="form-control" name="c" required/>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Jawaban D</label>
+                                                    <input class="form-control" name="d" required/>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>-- Pilih Jawaban --</label>
+                                                    <select class="form-control" name="kunci">
+                                                        <option>A</option>
+                                                        <option>B</option>
+                                                        <option>C</option>
+                                                        <option>D</option>
+                                                    </select>
+                                                    <?php
+                                                        if(isset($_POST['submit'])){
+                                                        $pilihan=$_POST["kunci"];
+                                                        $id_soal=$_POST["id"];
+                                                        $score=0;
+                                                        $benar=1;
+                                                        $salah=0;
+                                                        $kosong=0;
+                                                        for ($i=0;$i<$jumlah;$i++){
+                                                        //id nomor soal
+                                                        $nomor=$id_soal[$i];
+                                                        //jika user tidak memilih jawaban
+                                                        if (empty($pilihan[$nomor])){
+                                                        $kosong++;
+                                                        }else{
+                                                        //jawaban dari user
+                                                        $jawaban=$pilihan[$nomor];
+                                                        //cocokan jawaban user dengan jawaban di database
+                                                        if($cek){
+                                                        //jika jawaban cocok (benar)
+                                                        $benar++;
+                                                        }else{
+                                                        //jika salah
+                                                        $salah++;
+                                                        }}
+                                                        $score = $benar*5;
+                                                        }}
+                                                        ?>
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>-- Status --</label>
+                                                    <select class="form-control" name="status">
+                                                        <option>tampil</option>
+                                                        <option>tidak</option>
+                                                    </select>
+                                                </div>
+                                                
+                                                <div class="form-actions">
+                                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                                    <a class="btn btn-default" href="<?php echo base_url();?>soal">Batal</a>
+                                                </div>
+                                        </div>
+                                        
+                                    </form> 
+                                            <?php
+                                        }
+                                    }
+                                     ?>
                     </div>
         </div>
     </div>

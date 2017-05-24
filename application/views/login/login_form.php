@@ -21,7 +21,6 @@
   <body>
   <div id="login-page">
       <div class="container">
-      
           <form class="form-login" action="<?php echo base_url();?>index.php/login/login_form" method="post">
             <h2 class="form-login-heading">UJIAN BERBASIS KOMPUTER</h2>
             <div class="login-wrap">

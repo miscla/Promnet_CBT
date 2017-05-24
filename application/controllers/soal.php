@@ -6,6 +6,7 @@ class Soal extends CI_Controller {
 	{
 		parent::__construct();				
 		$this->load->model('soal_model');
+		$this->load->helper('form', 'url');
 	}
 	
 	function ceklogin(){
@@ -53,9 +54,10 @@ class Soal extends CI_Controller {
 			'allowed_types' => 'gif|jpg|png|jpeg',
 			'max_size' => '200000',
 			);
-			$this->load->library('upload', $config);
-			$this->upload->do_upload('file_upload');
-			$upload_data = $this->upload->data();
+
+		$this->load->library('upload', $config);
+		$this->upload->do_upload('file_upload');
+		$upload_data = $this->upload->data();
 		$this->ceklogin();
 		$id_soal = '';
 		$paket = $_POST['paket'];
@@ -66,6 +68,7 @@ class Soal extends CI_Controller {
 		$d = $_POST['d'];
 		$kunci = $_POST['kunci'];
 		$status = $_POST['status'];
+
 
 		$data = array(
 			'id_soal' => $id_soal,

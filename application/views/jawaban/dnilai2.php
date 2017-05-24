@@ -44,6 +44,7 @@
             </div>
             </div>
             </div>
+            <a href = "<?php echo base_url ('siswa/paket');?>">kembali</a>
 			
 <?php $this->load->view('include/footer') ?>
 </body>
